@@ -43,7 +43,7 @@ collections:
         file: src/_data/config.json
         fields:
           - {label: URL, name: url, widget: string}
-          - {label: Maximum Posts in RSS Feed, name: maxPostsInFeed, widget: number, min: 1, i18n: false}
+          - {label: Maximum Posts in RSS Feed, name: maxPostsInFeed, widget: number, min: 1}
   - label: Site Data
     name: data
     files:
