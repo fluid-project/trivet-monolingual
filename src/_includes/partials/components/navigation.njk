@@ -1,18 +1,10 @@
-            <nav class="nav" id="menu" aria-label="{% _ locale, "menu" %}">
+            <nav class="nav" id="menu" aria-label="menu">
                 <ul>
                     {% set navItems = collections.all | eleventyNavigation %}
                     {% for item in navItems %}
-                    {% if locale === item.lang %}
                     <li>
                         <a href="{{ item.url | url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
                     </li>
-                    {% endif %}
                     {% endfor %}
-                    {% set links = page.url | locale_links %}
-                    {%- for link in links %}
-                    <li>
-                        <a href="{{ link.url }}" lang="{{ link.lang }}" hreflang="{{ link.lang }}">{{ link.label }}</a>
-                    </li>
-                    {%- endfor -%}
                 </ul>
             </nav>

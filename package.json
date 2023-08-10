@@ -1,5 +1,5 @@
 {
-    "name": "trivet",
+    "name": "trivet-monolingual",
     "version": "1.0.0",
     "description": "Trivet is a simple starter kit for Eleventy-based static sites for the Fluid Project.",
     "scripts": {
@@ -20,14 +20,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fluid-project/trivet.git"
+        "url": "git+https://github.com/fluid-project/trivet-monolingual.git"
     },
     "author": "OCAD University",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/fluid-project/trivet/issues"
+        "url": "https://github.com/fluid-project/trivet-monolingual/issues"
     },
-    "homepage": "https://github.com/fluid-project/trivet#readme",
+    "homepage": "https://github.com/fluid-project/trivet-monolingual#readme",
     "dependencies": {
         "@11ty/eleventy": "2.0.1",
         "@11ty/eleventy-navigation": "0.3.5",

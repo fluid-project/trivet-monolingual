@@ -13,5 +13,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          package-name: trivet
+          package-name: trivet-monolingual
           pull-request-title-pattern: "chore(release): release${component} ${version}"
