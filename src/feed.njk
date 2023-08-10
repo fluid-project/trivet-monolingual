@@ -1,25 +1,20 @@
 ---
-pagination:
-  data: config.locales
-  size: 1
-  alias: locale
-permalink: "{% if locale !== defaultLanguage %}/{{ supportedLanguages[locale].slug }}{% endif %}/feed.xml"
+permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
-{% set collection = "postFeed_" + locale %}
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ locale }}">
-    <title>{{ site[locale].name }}</title>
-    <subtitle>{% _ locale, "The most recent posts from %s", site[locale].name %}</subtitle>
-    <link href="{{ config.url }}{% if locale !== defaultLanguage %}/{{ supportedLanguages[locale].slug }}{% endif %}/feed.xml" rel="self"/>
-    <link href="{{ config.url }}{% if locale !== defaultLanguage %}/{{ supportedLanguages[locale].slug }}{% endif %}"/>
-    <updated>{{ collections[collection] | rssLastUpdatedDate }}</updated>
+    <title>{{ site.name }}</title>
+    <subtitle>The most recent posts from {{ site.name }}</subtitle>
+    <link href="{{ config.url }}/feed.xml" rel="self"/>
+    <link href="{{ config.url }}"/>
+    <updated>{{ collections.postFeed | rssLastUpdatedDate }}</updated>
     <id>{{ config.url }}</id>
     <author>
-        <name>{{ site[locale].authorName }}</name>
-        <email>{{ site[locale].authorEmail }}</email>
+        <name>{{ site.authorName }}</name>
+        <email>{{ site.authorEmail }}</email>
     </author>
-    {% for post in collections[collection] %}
+    {% for post in collections.postFeed %}
         {% set absolutePostUrl %}{{ config.url }}{{ post.url | url }}{% endset %}
     <entry>
         <title>{{ post.data.title }}</title>

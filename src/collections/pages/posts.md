@@ -1,9 +1,9 @@
 ---
 layout: layouts/posts
-title: Articles
+title: Posts
 order: 3
 pagination:
-  data: collections.posts_fr-CA
+  data: collections.posts
   size: 10
   alias: posts
 ---

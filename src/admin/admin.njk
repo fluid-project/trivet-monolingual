@@ -7,11 +7,11 @@ eleventyExcludeFromCollections: true
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager | {{ site["en-CA"].name }}</title>
+    <title>Content Manager | {{ site.name }}</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="/lib/cms/netlify-cms.js"></script>
     {% if env.context === "dev" %}
     <script src="/lib/cms/react.development.js"></script>
