@@ -3,6 +3,7 @@
 const { generatePermalink } = require("eleventy-plugin-fluid");
 
 module.exports = {
+    permalink: data => generatePermalink(data, "pages"),
     eleventyComputed: {
         eleventyNavigation: data => {
             /* If this page has an `order` attribute, create an Eleventy Navigation object for it. */
@@ -15,7 +16,6 @@ module.exports = {
                 };
             }
             return false;
-        },
-        permalink: data => generatePermalink(data, "pages")
+        }
     }
 };
