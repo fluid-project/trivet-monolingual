@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.0...v1.1.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* don't include package name in tag ([#43](https://github.com/fluid-project/trivet-monolingual/issues/43)) ([adc8ee7](https://github.com/fluid-project/trivet-monolingual/commit/adc8ee79c12ccfbba5090f93a2d7282fd776e4de))
+* restore manifest ([#44](https://github.com/fluid-project/trivet-monolingual/issues/44)) ([de2b3c3](https://github.com/fluid-project/trivet-monolingual/commit/de2b3c3b63e6c0463676bbec46276720c044de10))
+
 ## [1.1.0](https://github.com/fluid-project/trivet-monolingual/compare/trivet-monolingual-v1.0.2...trivet-monolingual-v1.1.0) (2024-01-08)
 
 
