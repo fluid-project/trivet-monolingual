@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/fluid-project/trivet-monolingual/compare/trivet-monolingual-v1.0.2...trivet-monolingual-v1.1.0) (2024-01-08)
+
+
+### Features
+
+* lint JavaScript in Markdown ([#17](https://github.com/fluid-project/trivet-monolingual/issues/17)) ([efac02a](https://github.com/fluid-project/trivet-monolingual/commit/efac02acf7947c8a1910fa8476f4ee913005f0fb))
+* update robots.txt ([#20](https://github.com/fluid-project/trivet-monolingual/issues/20)) ([bfea813](https://github.com/fluid-project/trivet-monolingual/commit/bfea813c18e0dd45080d3aa879919cd902d0c061))
+
+
+### Bug Fixes
+
+* use correct Dependabot ignore syntax ([#19](https://github.com/fluid-project/trivet-monolingual/issues/19)) ([cca79c6](https://github.com/fluid-project/trivet-monolingual/commit/cca79c60be6a27255d6c69b6693c83fce910c634))
+* use more descriptive script names for linting (S)CSS and JavaScript ([#22](https://github.com/fluid-project/trivet-monolingual/issues/22)) ([32f81f1](https://github.com/fluid-project/trivet-monolingual/commit/32f81f161e5a103be48a6b0a9db7d65f6a5797ed))
+
 ## [1.0.2](https://github.com/fluid-project/trivet-monolingual/compare/v1.0.1...v1.0.2) (2023-08-15)
 
 
