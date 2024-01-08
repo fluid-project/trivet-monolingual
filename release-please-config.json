@@ -5,9 +5,10 @@
     "bump-patch-for-minor-pre-major": false,
     "draft": false,
     "prerelease": false,
-    "last-release-sha": "fe7a6503e4781fa64d8142e887e6a9b099f2bf46",
     "packages": {
-      ".": {}
+      ".": {
+        "include-component-in-tag": false
+      }
     },
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
   }
