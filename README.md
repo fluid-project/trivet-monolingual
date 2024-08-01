@@ -2,8 +2,6 @@
 
 _A simple starter kit for Eleventy-based static sites for the Fluid Project._
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/48f5935e-d9ef-4c62-b85b-b59fa423d135/deploy-status)](https://app.netlify.com/sites/trivet-monolingual/deploys)
-
 This repository contains the files needed to build [Eleventy](http://11ty.dev/)-based static sites for the [Fluid Project](https://fluidproject.org).
 It does not include support for internationalization; if your project requires internationalization, use [Trivet](https://github.com/fluid-project/trivet/)
 instead.
@@ -15,7 +13,7 @@ pre-configured:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/fluid-project/trivet-monolingual&stack=cms)
 
-You can also use GitHub's template repository feature to create your own project based on Trivet Monolingual. From the
+You can use GitHub's template repository feature to create your own project based on Trivet Monolingual. From the
 [repository homepage](https://github.com/fluid-project/trivet-monolingual),
 click the "Use this template" button and then choose "Create a new repository".
 
@@ -40,8 +38,8 @@ You can build and serve the website from a [Docker](https://docs.docker.com/get-
 
 Once you have Docker installed, run the following commands to build a Docker image and start a container:
 
-* Build the image: `docker build -t trivet-monolingual .`
-* Run the container: `docker run --name trivet-monolingual -p 8000:80 trivet-monolingual`
+- Build the image: `docker build -t trivet-monolingual .`
+- Run the container: `docker run --name trivet-monolingual -p 8000:80 trivet-monolingual`
 
 The website will be available at [http://localhost:8000](http://localhost:8000)
 
@@ -58,16 +56,16 @@ directory to the web root of your server.
 
 ## Features
 
-* Basic static site configuration for developing project websites and blogs.
-* Starter configuration for [Decap CMS](https://decapcms.org/).
-* Integrated [User Interface Options](https://docs.fluidproject.org/infusion/development/UserInterfaceOptionsAPI.html)
+- Basic static site configuration for developing project websites and blogs.
+- Starter configuration for [Decap CMS](https://decapcms.org/).
+- Integrated [User Interface Options](https://docs.fluidproject.org/infusion/development/UserInterfaceOptionsAPI.html)
   Preferences Editor.
 
 ## Notes
 
 Modifications can be made to any source file or directory except for the contents of the `_site` directory. The
 `_site` directory is not versioned since it contains the built website that Eleventy generates from the source files,
-and  files in `_site` are overwritten at build time.
+and files in `_site` are overwritten at build time.
 
 ## Working with Decap CMS
 
@@ -84,7 +82,7 @@ Trivet is based on other publicly available software, categorized by license:
 
 ### MIT License
 
-* [Eleventastic](https://github.com/maxboeck/eleventastic)
-* [eleventy-webpack](https://github.com/clenemt/eleventy-webpack)
-* [Hylia](https://github.com/hankchizljaw/hylia)
-* [Supermaya](https://github.com/MadeByMike/supermaya)
+- [Eleventastic](https://github.com/maxboeck/eleventastic)
+- [eleventy-webpack](https://github.com/clenemt/eleventy-webpack)
+- [Hylia](https://github.com/hankchizljaw/hylia)
+- [Supermaya](https://github.com/MadeByMike/supermaya)
