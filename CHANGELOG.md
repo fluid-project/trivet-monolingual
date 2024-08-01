@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.2](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.1...v1.1.2) (2024-08-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eleventy-plugin-fluid to v2.7.1 ([#70](https://github.com/fluid-project/trivet-monolingual/issues/70)) ([389db06](https://github.com/fluid-project/trivet-monolingual/commit/389db067ba892d9c5e62851be33aa2ad419192a2))
+* **deps:** update dependency infusion to v4.7.1 ([#80](https://github.com/fluid-project/trivet-monolingual/issues/80)) ([fe19412](https://github.com/fluid-project/trivet-monolingual/commit/fe1941232634a06682f3ec5c1984a2874a8c2fc0))
+* use JSON for commitlint config ([#95](https://github.com/fluid-project/trivet-monolingual/issues/95)) ([3773bc2](https://github.com/fluid-project/trivet-monolingual/commit/3773bc2c9baf7c6161f584a954d7f7b094631056))
+
 ## [1.1.1](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.0...v1.1.1) (2024-01-08)
 
 

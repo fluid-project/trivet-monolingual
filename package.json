@@ -1,6 +1,6 @@
 {
   "name": "trivet-monolingual",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Trivet is a simple starter kit for Eleventy-based static sites for the Fluid Project.",
   "scripts": {
     "build": "npm-run-all -l clean -p build:*",
@@ -65,6 +65,9 @@
   "lint-staged": {
     "*.css": "stylelint --fix",
     "*.{js,yml}": "eslint --fix",
-    "*.md": ["markdownlint-cli2 --fix", "eslint --fix"]
+    "*.md": [
+      "markdownlint-cli2 --fix",
+      "eslint --fix"
+    ]
   }
 }
