@@ -37,7 +37,7 @@
     "infusion": "4.7.1",
     "netlify-cms": "2.10.192",
     "prop-types": "15.8.1",
-    "react": "16.14.0"
+    "react": "19.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.6.0",
