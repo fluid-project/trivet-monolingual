@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.2...v1.1.3) (2024-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eleventy-plugin-fluid to v2.7.3 ([#110](https://github.com/fluid-project/trivet-monolingual/issues/110)) ([ec6162d](https://github.com/fluid-project/trivet-monolingual/commit/ec6162deed7d5545417352bc9a5b9ce714cb7f5d))
+
 ## [1.1.2](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.1...v1.1.2) (2024-08-01)
 
 
