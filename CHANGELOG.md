@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.3](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.2...v1.1.3) (2025-03-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @11ty/eleventy-navigation to v1 ([#208](https://github.com/fluid-project/trivet-monolingual/issues/208)) ([98b3ee4](https://github.com/fluid-project/trivet-monolingual/commit/98b3ee49617bdfc771e34441859fa641dc2cd688))
+* **deps:** update dependency eleventy-plugin-fluid to v2.7.3 ([#110](https://github.com/fluid-project/trivet-monolingual/issues/110)) ([ec6162d](https://github.com/fluid-project/trivet-monolingual/commit/ec6162deed7d5545417352bc9a5b9ce714cb7f5d))
+* **deps:** update dependency infusion to v4.8.0 ([#179](https://github.com/fluid-project/trivet-monolingual/issues/179)) ([a3bcb5b](https://github.com/fluid-project/trivet-monolingual/commit/a3bcb5b72c504d476192d2e12c1ecc035383656d))
+
 ## [1.1.2](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.1...v1.1.2) (2024-08-01)
 
 
