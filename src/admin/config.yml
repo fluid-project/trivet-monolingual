@@ -1,11 +1,17 @@
 backend:
-  name: git-gateway
+  name: github
   branch: main
+  repo: fluid-project/trivet-monolingual
+  base_url: https://auth.incd.ca
+  commit_messages:
+    create: 'chore(cms): create "{{path}}"'
+    update: 'chore(cms): update "{{path}}"'
+    delete: 'chore(cms): delete "{{path}}"'
+    uploadMedia: 'chore(cms): upload "{{path}}"'
+    deleteMedia: 'chore(cms): delete "{{path}}"'
 media_folder: src/assets/uploads
 public_folder: /assets/uploads
 
-# Run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
 editor:
   preview: false
 collections:
@@ -15,8 +21,14 @@ collections:
     folder: src/collections/posts/
     extension: md
     create: true
+    sortable_fields:
+      fields: [title, date]
+      default:
+        field: date
+        direction: descending
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: UUID, name: uuid, widget: uuid, i18n: duplicate}
       - {label: Excerpt, name: excerpt, widget: string, required: false}
       - {label: Author, name: author, widget: string}
       - {label: Publication Date, name: date, widget: datetime}
@@ -28,8 +40,14 @@ collections:
     extension: md
     create: true
     filter: {field: layout, value: layouts/page}
+    sortable_fields:
+      fields: [title, order]
+      default:
+        field: order
+        direction: ascending
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: UUID, name: uuid, widget: uuid, i18n: duplicate}
       - {label: Layout, name: layout, widget: hidden, default: layouts/page}
       - {label: Navigation Order, name: order, widget: number, min: 0}
       - {label: Navigation Label, name: key, widget: string, required: false}

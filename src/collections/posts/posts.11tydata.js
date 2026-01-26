@@ -1,8 +1,10 @@
-"use strict";
+import {generatePermalink} from 'eleventy-plugin-fluid';
 
-const { generatePermalink } = require("eleventy-plugin-fluid");
-
-module.exports = {
-    layout: "layouts/post",
-    permalink: data => generatePermalink(data, "posts")
+export default {
+	layout: 'layouts/post',
+	eleventyComputed: {
+		permalink(data) {
+			return generatePermalink(data, 'posts');
+		},
+	},
 };

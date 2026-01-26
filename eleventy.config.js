@@ -1,76 +1,100 @@
-/*
-Copyright the Trivet copyright holders.
-
-See the AUTHORS.md file at the top-level directory of this distribution and at
-https://github.com/fluid-project/trivet-monolingual/raw/main/AUTHORS.md.
-
-Licensed under the New BSD license. You may not use this file except in compliance with this License.
-
-You may obtain a copy of the New BSD License at
-https://github.com/fluid-project/trivet-monolingual/raw/main/LICENSE.md.
-*/
-
-"use strict";
-
-const fluidPlugin = require("eleventy-plugin-fluid");
-const navigationPlugin = require("@11ty/eleventy-navigation");
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+import fluidPlugin from 'eleventy-plugin-fluid';
+import fontAwesomePlugin from '@11ty/font-awesome';
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
+import {RenderPlugin} from '@11ty/eleventy';
+import {feedPlugin} from '@11ty/eleventy-plugin-rss';
+import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
 
 // Import transforms
-const parseTransform = require("./src/_transforms/parse-transform.js");
+import parseTransform from './src/_transforms/parse-transform.js';
 
 // Import data files
-const siteConfig = require("./src/_data/config.json");
+import siteConfig from './src/_data/config.json' with {type: 'json'};
+import siteData from './src/_data/site.json' with {type: 'json'};
 
-module.exports = function (eleventyConfig) {
-    eleventyConfig.setUseGitIgnore(false);
+// Functions
+const now = new Date();
+const livePosts = post => post.date <= now && !post.data.draft;
 
-    // Transforms
-    eleventyConfig.addTransform("parse", parseTransform);
+/**
+ * @param {object} eleventyConfig The Eleventy configuration object.
+ * @returns {object} Eleventy configuration.
+ */
+export default function eleventy(eleventyConfig) {
+	// Global Data
+	// eleventyConfig.addGlobalData('now', () => new Date());
 
-    // Passthrough copy
-    eleventyConfig.addPassthroughCopy({"src/admin/config.yml": "admin/config.yml"});
-    eleventyConfig.addPassthroughCopy({"src/assets/icons": "/"});
-    eleventyConfig.addPassthroughCopy({"src/assets/images": "assets/images"});
-    eleventyConfig.addPassthroughCopy({
-        "node_modules/netlify-cms/dist/netlify-cms.js": "lib/cms/netlify-cms.js",
-        "node_modules/nunjucks/browser/nunjucks-slim.min.js": "lib/cms/nunjucks-slim.min.js",
-        "node_modules/prop-types/prop-types.min.js": "lib/cms/prop-types.min.js",
-        "node_modules/react/umd/react.development.js": "lib/cms/react.development.js",
-        "node_modules/react/umd/react.production.min.js": "lib/cms/react.production.min.js"
-    });
+	// Filters
 
-    const now = new Date();
+	// Shortcodes
+	eleventyConfig.addShortcode('uioCustomInit', () => {
+		const options = {
+			preferences: ['fluid.prefs.lineSpace', 'fluid.prefs.textFont', 'fluid.prefs.contrast', 'fluid.prefs.enhanceInputs'],
+			auxiliarySchema: {
+				terms: {
+					templatePrefix: '/lib/infusion/src/framework/preferences/html',
+					messagePrefix: '/lib/infusion/src/framework/preferences/messages',
+				},
+			},
+			prefsEditorLoader: {
+				lazyLoad: true,
+			},
+		};
 
-    // Custom collections
-    const livePosts = post => post.date <= now && !post.data.draft;
+		return `<script>fluid.uiOptions(".flc-prefsEditor-separatedPanel", ${JSON.stringify(options)});</script>`;
+	});
 
-    eleventyConfig.addCollection("posts", collection => {
-        return collection.getFilteredByGlob("./src/collections/posts/*.md").filter(livePosts);
-    });
+	// Transforms
+	eleventyConfig.addTransform('parse', parseTransform);
 
-    // The following collection is used to create a collection of posts for the RSS feed.
-    eleventyConfig.addCollection("postFeed", collection => {
-        return collection.getFilteredByGlob("./src/collections/posts/*.md").filter(livePosts)
-            .reverse()
-            .slice(0, siteConfig.maxPostsInFeed);
-    });
+	// Passthrough copy
+	eleventyConfig.addPassthroughCopy({'src/admin/config.yml': 'admin/config.yml'});
+	eleventyConfig.addPassthroughCopy({'src/assets/icons': '/'});
+	eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
 
-    // Plugins
-    eleventyConfig.addPlugin(fluidPlugin, {
-        defaultLanguage: "en-CA",
-        i18n: false
-    });
-    eleventyConfig.addPlugin(navigationPlugin);
-    eleventyConfig.addPlugin(rssPlugin);
-    eleventyConfig.addPlugin(syntaxHighlightPlugin);
+	// Custom collections
+	eleventyConfig.addCollection('posts', collection => collection.getFilteredByGlob('./src/collections/posts/*.md').filter(posts => livePosts(posts)));
 
-    return {
-        dir: {
-            input: "src"
-        },
-        passthroughFileCopy: true,
-        markdownTemplateEngine: "njk"
-    };
-};
+	// The following collection is used to create a collection of posts for the RSS feed.
+	eleventyConfig.addCollection('postFeed', collection => collection.getFilteredByGlob('./src/collections/posts/*.md').filter(posts => livePosts(posts))
+		.toReversed()
+		.slice(0, siteConfig.maxPostsInFeed));
+
+	// Plugins
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(fluidPlugin, {
+		defaultLanguage: 'en-CA',
+		i18n: false,
+	});
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: 'atom',
+		outputPath: '/feed.xml',
+		collection: {
+			name: 'posts',
+			limit: siteConfig.maxPostsInFeed,
+		},
+		metadata: {
+			language: 'en',
+			title: siteData.name,
+			subtitle: siteData.description,
+			base: siteConfig.url,
+			author: {
+				name: siteData.authorName,
+				email: siteData.authorEmail,
+			},
+		},
+	});
+	eleventyConfig.addPlugin(fontAwesomePlugin);
+
+	eleventyConfig.addPlugin(RenderPlugin);
+	eleventyConfig.addPlugin(syntaxHighlightPlugin);
+
+	return {
+		dir: {
+			input: 'src',
+		},
+		templateFormats: ['njk', 'md', 'css', 'png', 'jpg', 'svg'],
+		htmlTemplateEngine: 'njk',
+		markdownTemplateEngine: 'njk',
+	};
+}
