@@ -1,21 +1,23 @@
-"use strict";
+import {generatePermalink} from 'eleventy-plugin-fluid';
 
-const { generatePermalink } = require("eleventy-plugin-fluid");
+export default {
+	permalink(data) {
+		return generatePermalink(data, 'pages');
+	},
 
-module.exports = {
-    permalink: data => generatePermalink(data, "pages"),
-    eleventyComputed: {
-        eleventyNavigation: data => {
-            /* If this page has an `order` attribute, create an Eleventy Navigation object for it. */
-            if (data.order) {
-                return {
-                    parent: data.parent,
-                    order: data.order,
-                    /* If a key is set, use that for the navigation item label; otherwise use the page title. */
-                    key: data.hasOwnProperty("key") ? data.key : data.title
-                };
-            }
-            return false;
-        }
-    }
+	eleventyComputed: {
+		eleventyNavigation(data) {
+			/* If this page has an `order` attribute, create an Eleventy Navigation object for it. */
+			if (data.order === 0) {
+				return false;
+			}
+
+			return {
+				key: data.uuid,
+				title: data.title,
+				order: data.order,
+				parent: data.parent ?? false,
+			};
+		},
+	},
 };

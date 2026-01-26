@@ -8,11 +8,6 @@ instead.
 
 ## Installation
 
-You can use this repository as a template for a new site hosted on [Netlify](https://netlify.com) with [Decap CMS](https://decapcms.org)
-pre-configured:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/fluid-project/trivet-monolingual&stack=cms)
-
 You can use GitHub's template repository feature to create your own project based on Trivet Monolingual. From the
 [repository homepage](https://github.com/fluid-project/trivet-monolingual),
 click the "Use this template" button and then choose "Create a new repository".
@@ -57,7 +52,7 @@ directory to the web root of your server.
 ## Features
 
 - Basic static site configuration for developing project websites and blogs.
-- Starter configuration for [Decap CMS](https://decapcms.org/).
+- Starter configuration for [Sveltia CMS](https://sveltiacms.app/).
 - Integrated [User Interface Options](https://docs.fluidproject.org/infusion/development/UserInterfaceOptionsAPI.html)
   Preferences Editor.
 
@@ -67,10 +62,10 @@ Modifications can be made to any source file or directory except for the content
 `_site` directory is not versioned since it contains the built website that Eleventy generates from the source files,
 and files in `_site` are overwritten at build time.
 
-## Working with Decap CMS
+## Working with Sveltia CMS
 
-The [Decap CMS](https://decapcms.org/) configuration can be edited in [`src/admin/config.yml`](src/admin/config.yml).
-For full documentation, see the [Decap CMS documentation](https://decapcms.org/docs/).
+The [Sveltia CMS](https://sveltiacms.app/) configuration can be edited in [`src/admin/config.yml`](src/admin/config.yml).
+For full documentation, see the [Sveltia CMS documentation](https://sveltiacms.app/en/docs/intro).
 
 ## License
 

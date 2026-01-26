@@ -26,7 +26,7 @@ The following code ensures we are always handling an array, even if it only has 
     </article>
 {% endfor %}
 
-{% if pagination.href.previous or pagination.href.next %}
+{% if pagination.pages.length > 1 %}
 {% include "partials/components/pagination.njk" %}
 {% endif %}
 {% endblock %}
