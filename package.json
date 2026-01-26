@@ -34,7 +34,7 @@
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "eleventy-plugin-fluid": "^2.7.3",
+    "eleventy-plugin-fluid": "^3.0.0",
     "infusion": "^4.8.0",
     "netlify-cms": "^2.10.192",
     "prop-types": "^15.8.1",
