@@ -1,3 +1,4 @@
+import {env} from 'node:process';
 import fluidPlugin from 'eleventy-plugin-fluid';
 import fontAwesomePlugin from '@11ty/font-awesome';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
@@ -85,9 +86,15 @@ export default function eleventy(eleventyConfig) {
 		},
 	});
 	eleventyConfig.addPlugin(fontAwesomePlugin);
-
 	eleventyConfig.addPlugin(RenderPlugin);
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
+
+	// Preprocessors
+	eleventyConfig.addPreprocessor('drafts', '*', (data, _content) => {
+		if (data.draft && env.ELEVENTY_RUN_MODE === 'build') {
+			return false;
+		}
+	});
 
 	return {
 		dir: {

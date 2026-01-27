@@ -53,24 +53,25 @@ collections:
       - {label: Navigation Label, name: key, widget: string, required: false}
       - {label: Excerpt, name: excerpt, widget: string, required: false}
       - {label: Body, name: body, widget: markdown}
-  - label: Site Configuration
+singletons:
+  - label: Configuration
     name: config
-    files:
-      - label: Site Configuration
-        name: config
-        file: src/_data/config.json
-        fields:
-          - {label: URL, name: url, widget: string}
-          - {label: Maximum Posts in RSS Feed, name: maxPostsInFeed, widget: number, min: 1}
+    icon: settings
+    editor:
+      preview: false
+    file: src/_data/config.json
+    fields:
+      - {label: URL, name: url, widget: string}
+      - {label: Maximum Posts in RSS Feed, name: maxPostsInFeed, widget: number, min: 1}
   - label: Site Data
-    name: data
-    files:
-      - label: Site Data
-        name: site
-        file: src/_data/site.json
-        fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Description, name: description, widget: text}
-          - {label: Author Name, name: authorName, widget: string}
-          - {label: Author Email, name: authorEmail, widget: string}
-          - {label: Author Website, name: authorWebsite, widget: string}
+    name: site
+    icon: code
+    editor:
+      preview: false
+    file: src/_data/site.json
+    fields:
+      - {label: Name, name: name, widget: string}
+      - {label: Description, name: description, widget: text}
+      - {label: Author Name, name: authorName, widget: string}
+      - {label: Author Email, name: authorEmail, widget: string}
+      - {label: Author Website, name: authorWebsite, widget: string}
