@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.0](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.2...v2.0.0) (2026-02-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to 11ty v3 and eleventy-plugin-fluid v3 ([#240](https://github.com/fluid-project/trivet-monolingual/issues/240))
+
+### Features
+
+* upgrade to 11ty v3 and eleventy-plugin-fluid v3 ([#240](https://github.com/fluid-project/trivet-monolingual/issues/240)) ([0e50d7c](https://github.com/fluid-project/trivet-monolingual/commit/0e50d7c280b2ede27a5b8008a261df05e0b18a5c))
+* use CMS singletons for better configuration ([#241](https://github.com/fluid-project/trivet-monolingual/issues/241)) ([8956cfe](https://github.com/fluid-project/trivet-monolingual/commit/8956cfeffeacbbb6def718e56be7def8098d3164))
+* use pnpm and nix ([#244](https://github.com/fluid-project/trivet-monolingual/issues/244)) ([8ca18c1](https://github.com/fluid-project/trivet-monolingual/commit/8ca18c1493f17176da1a2cb57f6affa3ce1f3716))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @11ty/eleventy-navigation to v1 ([#208](https://github.com/fluid-project/trivet-monolingual/issues/208)) ([98b3ee4](https://github.com/fluid-project/trivet-monolingual/commit/98b3ee49617bdfc771e34441859fa641dc2cd688))
+* **deps:** update dependency @11ty/eleventy-navigation to v1.0.2 ([#211](https://github.com/fluid-project/trivet-monolingual/issues/211)) ([359e8b5](https://github.com/fluid-project/trivet-monolingual/commit/359e8b5af3bbbea7a212008d3801887fa1e87e25))
+* **deps:** update dependency @11ty/eleventy-navigation to v1.0.3 ([#213](https://github.com/fluid-project/trivet-monolingual/issues/213)) ([507dfcd](https://github.com/fluid-project/trivet-monolingual/commit/507dfcdf1d69e8b96f17575e7eb2562be1379c8d))
+* **deps:** update dependency @11ty/eleventy-navigation to v1.0.4 ([#214](https://github.com/fluid-project/trivet-monolingual/issues/214)) ([d81243c](https://github.com/fluid-project/trivet-monolingual/commit/d81243c7cacf88a2055aacfa01d2e26119d12b00))
+* **deps:** update dependency eleventy-plugin-fluid to v2.7.3 ([#110](https://github.com/fluid-project/trivet-monolingual/issues/110)) ([ec6162d](https://github.com/fluid-project/trivet-monolingual/commit/ec6162deed7d5545417352bc9a5b9ce714cb7f5d))
+* **deps:** update dependency infusion to v4.8.0 ([#179](https://github.com/fluid-project/trivet-monolingual/issues/179)) ([a3bcb5b](https://github.com/fluid-project/trivet-monolingual/commit/a3bcb5b72c504d476192d2e12c1ecc035383656d))
+
 ## [1.1.2](https://github.com/fluid-project/trivet-monolingual/compare/v1.1.1...v1.1.2) (2024-08-01)
 
 
